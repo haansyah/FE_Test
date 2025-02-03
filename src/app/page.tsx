@@ -5,7 +5,7 @@ import api from "@/lib/axios";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 
-export default function Home() {
+export default function Page() {
   const [loading, setLoading] = useState(false);
 
   const token = localStorage.getItem("token");
@@ -40,29 +40,19 @@ export default function Home() {
     return <div>Loading...</div>;
   }
 
-  if (isValidToken) {
-    return (
-      <div>
-        <h1>Home</h1>
-        <p>Welcome to the home page</p>
-        <a href="/dashboard">
-          <Button asChild>
-            <Link href="/admin/dashboard">Go to dashboard</Link>
-          </Button>
-        </a>
-      </div>
-    );
-  }
-
   return (
-    <div>
-      <h1>Home</h1>
-      <p>Welcome to the home page</p>
-      <a href="/login">
-        <Button asChild>
-          <Link href="/auth/login">Login</Link>
-        </Button>
-      </a>
+    <div className="flex flex-row mt-10">
+      <Button asChild className="w-full">
+        {isValidToken ? (
+          <Link href="/admin/dashboard" className="text-center">
+            Go to dashboard
+          </Link>
+        ) : (
+          <Link href="/auth/login" className="text-center">
+            Login
+          </Link>
+        )}
+      </Button>
     </div>
   );
 }

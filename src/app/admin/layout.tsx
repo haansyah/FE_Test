@@ -33,9 +33,9 @@ export default function RootLayout({
             <div className="max-w-7xl px-4 py-4 mx-auto">
               <div className="flex flex-row justify-between items-center">
                 <div className="flex flex-row items-center">
-                  <Link href="/" className="h-5 overflow-hidden">
+                  <a href="/" className="h-5 overflow-hidden">
                     <Logo className="h-full w-full" />
-                  </Link>
+                  </a>
                   <ul className="flex flex-row space-x-4 ml-10">
                     <li>
                       <Button variant="link">

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "../globals.css";
 import Logo from "@/components/icon/logo";
 import { Toaster } from "@/components/ui/sonner";
+import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Login",
@@ -20,9 +21,9 @@ export default function RootLayout({
           <div className="lg:w-1/2 min-h-screen flex flex-col items-center justify-center mx-auto relative pb-20">
             <div className="flex flex-col">
               <div className="px-4 mx-auto flex flex-col items-center">
-                <div className="h-9 overflow-hidden">
+                <a href="/" className="h-9 overflow-hidden">
                   <Logo className="h-full w-full" />
-                </div>
+                </a>
                 <div className="mt-3 text-lg font-semibold">
                   Welcome back to GIS
                 </div>
